@@ -1,0 +1,25 @@
+{
+  "name": "language-card-server",
+  "version": "1.0.0",
+  "description": "server for language card",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiuzhuo/language-card-server.git"
+  },
+  "author": "Zhuo Xiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiuzhuo/language-card-server/issues"
+  },
+  "homepage": "https://github.com/xiuzhuo/language-card-server#readme",
+  "dependencies": {
+    "good": "^6.3.0",
+    "good-console": "^5.0.3",
+    "hapi": "^10.0.0",
+    "inert": "^3.0.1"
+  }
+}
