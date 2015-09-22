@@ -39,7 +39,7 @@ server.register({
   options : {
   }
 }, function (err) {
-    if (err) {
+    if (err) { 
         throw err;
     }
     server.start(function (err) {
