@@ -29,6 +29,11 @@ server.route({
   }
 });
 
+server.ext('onRequest', function(request, next){
+  console.log(request.path, request.query);
+  next();
+})
+
 server.register({
   register : Inert,
   options : {
