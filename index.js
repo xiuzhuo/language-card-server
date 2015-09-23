@@ -13,12 +13,12 @@ var server = new Hapi.Server({
         }
     }
 });
-server.connection({port:3000})
-
+server.connection({port:3000});
 server.route({
   method : 'GET',
   path : '/images/{category}/{entry}',
   handler : function (request, reply){
+    console.log('images/' + encodeURIComponent(request.params.category)+ '/' + encodeURIComponent(request.params.entry));
     var fileRelativePath = 'images/' + encodeURIComponent(request.params.category)+ '/' + encodeURIComponent(request.params.entry);
     var fileExist = Fs.existsSync(__dirname + '/public/' + fileRelativePath);
     if (fileExist){
@@ -29,17 +29,12 @@ server.route({
   }
 });
 
-server.ext('onRequest', function(request, next){
-  console.log(request.path, request.query);
-  next();
-})
-
 server.register({
   register : Inert,
   options : {
   }
 }, function (err) {
-    if (err) { 
+    if (err) {
         throw err;
     }
     server.start(function (err) {
